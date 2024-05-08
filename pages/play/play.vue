@@ -1,93 +1,68 @@
 <template>
-	<view>
-
-		<view class="card">
-			<img mode="widthFix" class="bg_img" :src="cover" alt="">
-			<view class="filter_blur"></view>
-			<view class="content">
-				<view class="cover_box">
-					<view class="player">
-						<image src="../../static/Player_Play.png" v-if="!isPlayer" style="width: 100rpx;height: 100rpx;"
-							@click="play()"></image>
-						<image src="../../static/pause.png" v-else style="width: 60rpx;height: 60rpx;" @click="stop()">
-						</image>
-					</view>
-					<img mode="widthFix" class="cover" :src="cover" alt="">
-				</view>
-				<view class="comment">
-					{{ comment }}
-				</view>
-				<view class="author">
-					——{{ user }}
-				</view>
-				<view class="author">
-					《{{ songs }}》{{ sings }}
-				</view>
-				<view class="change" @click="change">
-					<img src="../../static/change.png" alt="">
-				</view>
-			</view>
-		</view>
-	</view>
+  <view class="card">
+    <img class="bg_img" mode="widthFix" :src="cover" alt="">
+    <view class="filter_blur"></view>
+    <view class="content">
+      <view class="cover_box">
+        <view class="player">
+          <image :src="isPlayer ? '../../static/pause.png' : '../../static/Player_Play.png'"
+                 :style="isPlayer ? 'width: 60rpx; height: 60rpx;' : 'width: 100rpx; height: 100rpx;'"
+                 @click="togglePlay"></image>
+        </view>
+        <img class="cover" mode="widthFix" :src="cover" alt="">
+      </view>
+      <view class="comment">{{ comment }}</view>
+      <view class="author">——{{ user }}</view>
+      <view class="author">《{{ songs }}》{{ sings }}</view>
+      <view class="change" @click="change">
+        <img src="../../static/change.png" alt="">
+      </view>
+    </view>
+  </view>
 </template>
 
 <script>
-const innerAudioContext = uni.createInnerAudioContext();
-
 export default {
-    data() {
-        return {
-            isPlayer: false,
-            cover: "",
-            comment: "",
-            user: "",
-            songs: "",
-            sings: ""
-        }
+  data() {
+    return {
+      isPlayer: true,  // Ensure this is true if autoplay is enabled
+      cover: "",
+      comment: "",
+      user: "",
+      songs: "",
+      sings: ""
+    };
+  },
+  methods: {
+    togglePlay() {
+      this.isPlayer = !this.isPlayer;
+      this.isPlayer ? this.innerAudioContext.play() : this.innerAudioContext.stop();
     },
-    methods: {
-        play() {
-            this.isPlayer = true;
-            innerAudioContext.play();
-        },
-        stop() {
-            this.isPlayer = false;
-            innerAudioContext.stop();
-        },
-        change() {
-            uni.showLoading({
-                title: '加载中'
-            });
-            uni.request({
-                url: 'https://tenapi.cn/v2/comment',
-                method: 'GET',
-                success: (response) => {
-                    this.updateData(response.data.data);
-                },
-                fail: () => {
-                    uni.showToast({
-                        title: '加载失败',
-                        icon: 'error'
-                    });
-                },
-                complete: () => {
-                    uni.hideLoading();
-                }
-            });
-        },
-        updateData(data) {
-            this.cover = data.cover;
-            this.comment = data.comment;
-            this.user = data.name;
-            this.songs = data.songs;
-            this.sings = data.sings;
-            innerAudioContext.autoplay = true;
-            innerAudioContext.src = data.url;
-        }
+    change() {
+      uni.showLoading({ title: '加载中' });
+      uni.request({
+        url: 'https://tenapi.cn/v2/comment',
+        method: 'GET',
+        success: (response) => this.updateData(response.data.data),
+        fail: () => uni.showToast({ title: '加载失败', icon: 'error' }),
+        complete: () => uni.hideLoading()
+      });
     },
-    created() {
-        this.change(); // Load initial data
+    updateData(data) {
+      this.cover = data.cover;
+      this.comment = data.comment;
+      this.user = data.name;
+      this.songs = data.songs;
+      this.sings = data.sings;
+      this.innerAudioContext.src = data.url;
+      this.innerAudioContext.autoplay = true;
+      this.isPlayer = true;  // Ensure playback state is synced
     }
+  },
+  created() {
+    this.innerAudioContext = uni.createInnerAudioContext();
+    this.change(); // Initialize data
+  }
 }
 </script>
 
@@ -178,6 +153,5 @@ export default {
 	.change img {
 		width: 100%;
 		height: 100%;
-		z-index: -1;
 	}
 </style>

@@ -250,22 +250,17 @@ var render = function () {
   var _c = _vm._self._c || _h
   return _c(
     "uni-view",
-    { attrs: { _i: 0 } },
+    { staticClass: _vm._$g(0, "sc"), attrs: { _i: 0 } },
     [
+      _c("img", {
+        staticClass: _vm._$g(1, "sc"),
+        attrs: { mode: "widthFix", src: _vm._$g(1, "a-src"), alt: "", _i: 1 },
+      }),
+      _c("uni-view", { staticClass: _vm._$g(2, "sc"), attrs: { _i: 2 } }),
       _c(
         "uni-view",
-        { staticClass: _vm._$g(1, "sc"), attrs: { _i: 1 } },
+        { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } },
         [
-          _c("img", {
-            staticClass: _vm._$g(2, "sc"),
-            attrs: {
-              mode: "widthFix",
-              src: _vm._$g(2, "a-src"),
-              alt: "",
-              _i: 2,
-            },
-          }),
-          _c("uni-view", { staticClass: _vm._$g(3, "sc"), attrs: { _i: 3 } }),
           _c(
             "uni-view",
             { staticClass: _vm._$g(4, "sc"), attrs: { _i: 4 } },
@@ -274,81 +269,56 @@ var render = function () {
                 "uni-view",
                 { staticClass: _vm._$g(5, "sc"), attrs: { _i: 5 } },
                 [
-                  _c(
-                    "uni-view",
-                    { staticClass: _vm._$g(6, "sc"), attrs: { _i: 6 } },
-                    [
-                      _vm._$g(7, "i")
-                        ? _c("v-uni-image", {
-                            staticStyle: { width: "100rpx", height: "100rpx" },
-                            attrs: { src: _vm._$g(7, "a-src"), _i: 7 },
-                            on: {
-                              click: function ($event) {
-                                return _vm.$handleViewEvent($event)
-                              },
-                            },
-                          })
-                        : _c("v-uni-image", {
-                            staticStyle: { width: "60rpx", height: "60rpx" },
-                            attrs: { src: _vm._$g(8, "a-src"), _i: 8 },
-                            on: {
-                              click: function ($event) {
-                                return _vm.$handleViewEvent($event)
-                              },
-                            },
-                          }),
-                    ],
-                    1
-                  ),
-                  _c("img", {
-                    staticClass: _vm._$g(9, "sc"),
-                    attrs: {
-                      mode: "widthFix",
-                      src: _vm._$g(9, "a-src"),
-                      alt: "",
-                      _i: 9,
+                  _c("v-uni-image", {
+                    style: _vm._$g(6, "s"),
+                    attrs: { src: _vm._$g(6, "a-src"), _i: 6 },
+                    on: {
+                      click: function ($event) {
+                        return _vm.$handleViewEvent($event)
+                      },
                     },
                   }),
                 ],
                 1
               ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
-                [_vm._v(_vm._$g(10, "t0-0"))]
-              ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(11, "sc"), attrs: { _i: 11 } },
-                [_vm._v("——" + _vm._$g(11, "t0-0"))]
-              ),
-              _c(
-                "uni-view",
-                { staticClass: _vm._$g(12, "sc"), attrs: { _i: 12 } },
-                [
-                  _vm._v(
-                    "《" + _vm._$g(12, "t0-0") + "》" + _vm._$g(12, "t0-1")
-                  ),
-                ]
-              ),
-              _c(
-                "uni-view",
-                {
-                  staticClass: _vm._$g(13, "sc"),
-                  attrs: { _i: 13 },
-                  on: {
-                    click: function ($event) {
-                      return _vm.$handleViewEvent($event)
-                    },
-                  },
+              _c("img", {
+                staticClass: _vm._$g(7, "sc"),
+                attrs: {
+                  mode: "widthFix",
+                  src: _vm._$g(7, "a-src"),
+                  alt: "",
+                  _i: 7,
                 },
-                [
-                  _c("img", {
-                    attrs: { src: _vm._$g(14, "a-src"), alt: "", _i: 14 },
-                  }),
-                ],
-                1
-              ),
+              }),
+            ],
+            1
+          ),
+          _c("uni-view", { staticClass: _vm._$g(8, "sc"), attrs: { _i: 8 } }, [
+            _vm._v(_vm._$g(8, "t0-0")),
+          ]),
+          _c("uni-view", { staticClass: _vm._$g(9, "sc"), attrs: { _i: 9 } }, [
+            _vm._v("——" + _vm._$g(9, "t0-0")),
+          ]),
+          _c(
+            "uni-view",
+            { staticClass: _vm._$g(10, "sc"), attrs: { _i: 10 } },
+            [_vm._v("《" + _vm._$g(10, "t0-0") + "》" + _vm._$g(10, "t0-1"))]
+          ),
+          _c(
+            "uni-view",
+            {
+              staticClass: _vm._$g(11, "sc"),
+              attrs: { _i: 11 },
+              on: {
+                click: function ($event) {
+                  return _vm.$handleViewEvent($event)
+                },
+              },
+            },
+            [
+              _c("img", {
+                attrs: { src: _vm._$g(12, "a-src"), alt: "", _i: 12 },
+              }),
             ],
             1
           ),
@@ -453,7 +423,7 @@ if(false) {}
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../../HBuilderX/plugins/uniapp-cli/node_modules/css-loader/dist/runtime/api.js */ 10);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, "\n.card {\n\twidth: 600rpx;\n\tmin-height: 900rpx;\n\tmargin: 30rpx auto;\n\tborder-radius: 30rpx;\n\toverflow: hidden;\n\tposition: relative;\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: flex-end;\n}\n.filter_blur {\n\twidth: 100%;\n\theight: 100%;\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\tbackground: rgba(180, 181, 183, 0.2);\n\t-webkit-backdrop-filter: blur(60rpx);\n\t        backdrop-filter: blur(60rpx);\n\toverflow: hidden;\n\tborder-radius: 30rpx;\n}\n.bg_img {\n\twidth: 100%;\n\tflex-shrink: 0;\n\tposition: absolute;\n\tbottom: 0;\n}\n.content {\n\tz-index: 99;\n\toverflow: hidden;\n\tborder-radius: 30rpx;\n\tposition: relative;\n}\n.cover_box {\n\tposition: relative;\n}\n.player {\n\tposition: absolute;\n\ttop: 50%;\n\tleft: 50%;\n\twidth: 150rpx;\n\theight: 150rpx;\n\tmargin-left: -75rpx;\n\tmargin-top: -75rpx;\n\tbackground: rgba(176, 176, 176, 0.2);\n\t-webkit-backdrop-filter: blur(10rpx);\n\t        backdrop-filter: blur(10rpx);\n\tborder-radius: 50%;\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n}\n.cover {\n\twidth: 100%;\n}\n.comment {\n\tpadding: 30rpx;\n\tfont-size: 35rpx;\n\tcolor: #FFF\n}\n.author {\n\ttext-align: right;\n\tpadding: 0 30rpx 30rpx;\n\tfont-size: 30rpx;\n\tcolor: #FFF\n}\n.change {\n\twidth: 50rpx;\n\theight: 50rpx;\n\tposition: absolute;\n\tleft: 20rpx;\n\tbottom: 20rpx;\n}\n.change img {\n\twidth: 100%;\n\theight: 100%;\n\tz-index: -1;\n}\n", ""]);
+exports.push([module.i, "\n.card {\n\twidth: 600rpx;\n\tmin-height: 900rpx;\n\tmargin: 30rpx auto;\n\tborder-radius: 30rpx;\n\toverflow: hidden;\n\tposition: relative;\n\tdisplay: flex;\n\tflex-direction: column;\n\tjustify-content: flex-end;\n}\n.filter_blur {\n\twidth: 100%;\n\theight: 100%;\n\tposition: absolute;\n\ttop: 0;\n\tleft: 0;\n\tbackground: rgba(180, 181, 183, 0.2);\n\t-webkit-backdrop-filter: blur(60rpx);\n\t        backdrop-filter: blur(60rpx);\n\toverflow: hidden;\n\tborder-radius: 30rpx;\n}\n.bg_img {\n\twidth: 100%;\n\tflex-shrink: 0;\n\tposition: absolute;\n\tbottom: 0;\n}\n.content {\n\tz-index: 99;\n\toverflow: hidden;\n\tborder-radius: 30rpx;\n\tposition: relative;\n}\n.cover_box {\n\tposition: relative;\n}\n.player {\n\tposition: absolute;\n\ttop: 50%;\n\tleft: 50%;\n\twidth: 150rpx;\n\theight: 150rpx;\n\tmargin-left: -75rpx;\n\tmargin-top: -75rpx;\n\tbackground: rgba(176, 176, 176, 0.2);\n\t-webkit-backdrop-filter: blur(10rpx);\n\t        backdrop-filter: blur(10rpx);\n\tborder-radius: 50%;\n\tdisplay: flex;\n\tjustify-content: center;\n\talign-items: center;\n}\n.cover {\n\twidth: 100%;\n}\n.comment {\n\tpadding: 30rpx;\n\tfont-size: 35rpx;\n\tcolor: #FFF\n}\n.author {\n\ttext-align: right;\n\tpadding: 0 30rpx 30rpx;\n\tfont-size: 30rpx;\n\tcolor: #FFF\n}\n.change {\n\twidth: 50rpx;\n\theight: 50rpx;\n\tposition: absolute;\n\tleft: 20rpx;\n\tbottom: 20rpx;\n}\n.change img {\n\twidth: 100%;\n\theight: 100%;\n}\n", ""]);
 // Exports
 module.exports = exports;
 
