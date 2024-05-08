@@ -11,7 +11,7 @@
 				:aspect="aspect"
 				min-bitrate="1000"
 				audio-quality="16KHz"
-				device-position="back"
+				device-position="front"
 				:auto-focus="true"
 				:muted="true"
 				:enable-camera="true"
@@ -27,7 +27,7 @@
 			</cover-view>
 
 			<!--辅助线-->
-			<cover-view class="outline-box" :style="{ width: windowWidth, height: windowHeight - 80 }">
+			<cover-view class="outline-box" :style="{ width: windowWidth, height: windowHeight - 255 }">
 				<cover-image class="outline-img" src="/static/outline/idphotoskin.png" style=""></cover-image>
 			</cover-view>
 		</view>
@@ -198,7 +198,7 @@ export default {
 		left: 0;
 		bottom: 0;
 		width: 750rpx;
-		height: 180rpx;
+		height: 550rpx;
 		z-index: 98;
 		align-items: center;
 		justify-content: center;
@@ -207,13 +207,13 @@ export default {
 			left: 0;
 			bottom: 0;
 			width: 750rpx;
-			height: 180rpx;
+			height: 550rpx;
 			z-index: 98;
 		}
 		.menu-back {
 			position: absolute;
-			left: 30rpx;
-			bottom: 50rpx;
+			left: 60rpx;
+			bottom: 100rpx;
 			width: 80rpx;
 			height: 80rpx;
 			z-index: 99;
@@ -227,8 +227,8 @@ export default {
 		}
 		.menu-flip {
 			position: absolute;
-			right: 30rpx;
-			bottom: 50rpx;
+			right: 60rpx;
+			bottom: 100rpx;
 			width: 80rpx;
 			height: 80rpx;
 			z-index: 99;
