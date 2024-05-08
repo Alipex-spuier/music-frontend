@@ -1,0 +1,26 @@
+{
+	"pages": [
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarBackgroundColor":"#FFFFFF",
+				"backgroundColor":"#FFFFFF"
+			}
+		},
+		{
+            "path" : "pages/camera/idphoto/idphoto",
+            "style" :                                                                                    
+            {
+                "navigationStyle":"custom",
+                "backgroundColor":"#000000"
+            }
+            
+        }
+    ],
+	"globalStyle": {
+		"navigationBarTextStyle": "black",
+		"navigationBarTitleText": "music",
+		"navigationBarBackgroundColor": "#FFFFFF",
+		"backgroundColor": "#FFFFFF"
+	}
+}
