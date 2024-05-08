@@ -49,6 +49,7 @@ export default {
       });
     },
     updateData(data) {
+		console.log(data)
       this.cover = data.cover;
       this.comment = data.comment;
       this.user = data.name;
