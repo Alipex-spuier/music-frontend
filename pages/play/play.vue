@@ -15,7 +15,7 @@
       <view class="author">——{{ user }}</view>
       <view class="author">《{{ songs }}》{{ sings }}</view>
       <view class="change" @click="change">
-        <img src="../../static/change.png" alt="">
+        <image src='../../static/change.png' style='width: 50rpx;height: 50rpx;display:inline-block;' />
       </view>
     </view>
   </view>

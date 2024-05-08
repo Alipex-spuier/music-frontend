@@ -316,8 +316,13 @@ var render = function () {
               },
             },
             [
-              _c("img", {
-                attrs: { src: _vm._$g(12, "a-src"), alt: "", _i: 12 },
+              _c("v-uni-image", {
+                staticStyle: {
+                  width: "50rpx",
+                  height: "50rpx",
+                  display: "inline-block",
+                },
+                attrs: { src: _vm._$g(12, "a-src"), _i: 12 },
               }),
             ],
             1
